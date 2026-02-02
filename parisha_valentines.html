@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Parisha 💘</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffe6eb, #ffb6c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  .card {
+    position: relative;
+    background: white;
+    border-radius: 28px;
+    padding: 40px 30px;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+  }
+
+  .name {
+    color: #d81b60;
+    font-style: italic;
+  }
+
+  button {
+    width: 110px;        /* 🔒 LOCKED SIZE */
+    height: 44px;        /* 🔒 LOCKED SIZE */
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #yes {
+    background: linear-gradient(135deg, #ff4b7d, #ff7aa2);
+    color: white;
+    margin-right: 10px;
+  }
+
+  #no {
+    background: #f1f1f1;
+    position: absolute;
+    left: 180px;
+    top: 210px;
+  }
+
+  #final {
+    display: none;
+    margin-top: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #d81b60;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>Helo <span class="name">Parisha gie🥺</span> 🤍</h1>
+  <p>Will you be my Valentine?</p>
+
+  <button id="yes" onclick="yesClicked()">YES 💘</button>
+  <button id="no" onmouseover="moveNo()">NO 😒</button>
+
+  <div id="final">
+    Olehhhh Puchieeeee 😻😝🤍  
+    <br>Happy Valentine’s Day in advance 
+  </div>
+</div>
+
+<script>
+  let done = false;
+
+  function moveNo() {
+    if (done) return;
+
+    const card = document.getElementById("card");
+    const no = document.getElementById("no");
+
+    const maxX = card.clientWidth - no.offsetWidth - 20;
+    const maxY = card.clientHeight - no.offsetHeight - 20;
+
+    no.style.left = Math.random() * maxX + "px";
+    no.style.top = Math.random() * maxY + "px";
+  }
+
+  function yesClicked() {
+    done = true;
+    document.getElementById("final").style.display = "block";
+    document.getElementById("no").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
